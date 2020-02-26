@@ -241,7 +241,7 @@ return shirtSize;
 */
 function tallyUpDonations(runners) {
   let sum = runners.reduce(function(accumulator, item){
-    return accumulator + item.donations;
+    return accumulator + item.donation;
   },0);
  return sum 
 }
