@@ -67,7 +67,7 @@ function processLength(list, callback) {
  * should return 'barbar'.
 */
 function processLastItem( stringList, callback) {
-  return callback(stringList.slice(-1)[0]);
+  return callback(stringList[stringList.length-1]);
 }
 
 /**
@@ -240,8 +240,8 @@ return shirtSize;
  * @returns a number which is the sum of the donations by all runners.
 */
 function tallyUpDonations(runners) {
-  let sum = runners.reduce(function(accumulator, item){
-    return accumulator + item.donation;
+  let sum = runners.reduce(function(accumulator, runner){
+    return accumulator + runner.donation;
   },0);
  return sum 
 }
@@ -297,7 +297,7 @@ function counterMakerWithLimit(maxValue) {
   return function counter(){
     if(count === maxValue){
     count = -1;
-    return ++count;
+    return ++count; 
   }
   else{
     return ++count;
